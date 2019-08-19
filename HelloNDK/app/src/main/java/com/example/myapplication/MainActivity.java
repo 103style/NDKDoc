@@ -11,8 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Date;
 import java.util.Random;
 
+/**
+ * @author https://github.com/103style
+ * @date 2019/8/19 14:55
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
@@ -37,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
     public native String accessMethod();
 
+    public native Date accessConstructor();
+
     public native int accessStaticMethod(int max);
 
     public String getAuthName(String name) {
@@ -50,11 +57,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         config();
 
-
         //调用jni获取返回值
         TextView show = findViewById(R.id.tv_show);
         show.setText(helloNDK());
-
 
         TextView accessFiledShow = findViewById(R.id.tv_access_filed_show);
         String res = "before: " + showText;
@@ -63,14 +68,12 @@ public class MainActivity extends AppCompatActivity {
         res += ", after:" + showText;
         accessFiledShow.setText(res);
 
-
         TextView accessStaticFiledShow = findViewById(R.id.tv_static_access_filed_show);
         res = "before: " + staticString;
         //通过ndk 修改静态变量
         accessStaticField();
         res += ", after:" + staticString;
         accessStaticFiledShow.setText(res);
-
 
         //通过jni调用java方法 并返回结果
         TextView tvName = findViewById(R.id.tv_auth_name);
@@ -81,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
         TextView staticMethodShow = findViewById(R.id.tv_static_method_show);
         res = "accessStaticMethod(100) = " + accessStaticMethod(100);
         staticMethodShow.setText(res);
+
+        //通过jni调用构造方法实例化对象
+        TextView staticConstShow = findViewById(R.id.tv_const_show);
+        res = accessConstructor().toString();
+        staticConstShow.setText(res);
+
     }
 
     private void config() {

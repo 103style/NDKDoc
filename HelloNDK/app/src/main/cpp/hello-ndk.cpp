@@ -64,5 +64,16 @@ Java_com_example_myapplication_MainActivity_accessStaticMethod__I(JNIEnv *env, j
     jint res = env->CallStaticIntMethod(jCla, methodID, max);
     //返回结果
     return res;
+}
 
+extern "C"
+JNIEXPORT jobject JNICALL
+Java_com_example_myapplication_MainActivity_accessConstructor(JNIEnv *env, jobject instance) {
+    //得到TestClass对应的jclass
+//    jclass jCla = env->FindClass("com/example/myapplication/TestClass");
+    jclass jCla = env->FindClass("java/util/Date");
+    //获取构造函数的methodId  构造函数为 void函数 对应的方法名为<init>
+    jmethodID methodID = env->GetMethodID(jCla, "<init>", "()V");
+    jobject jTestClass = env->NewObject(jCla, methodID);
+    return jTestClass;
 }
