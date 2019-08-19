@@ -51,8 +51,18 @@ Java_com_example_myapplication_MainActivity_accessMethod(JNIEnv *env, jobject in
     return static_cast<jstring>(objRes);
 }
 
+
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_example_myapplication_MainActivity_accessStaticMethod(JNIEnv *env, jobject instance) {
+Java_com_example_myapplication_MainActivity_accessStaticMethod__I(JNIEnv *env, jobject instance,
+                                                                  jint max) {
+    //获取类
+    jclass jCla = env->GetObjectClass(instance);
+    //获取静态方法的id
+    jmethodID methodID = env->GetStaticMethodID(jCla, "getRandomValue", "(I)I");
+    //调用静态方法
+    jint res = env->CallStaticIntMethod(jCla, methodID, max);
+    //返回结果
+    return res;
 
 }

@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     public native String accessMethod();
 
-    public native int accessStaticMethod();
+    public native int accessStaticMethod(int max);
 
     public String getAuthName(String name) {
         Log.e(TAG, "name = " + name);
@@ -76,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
         TextView tvName = findViewById(R.id.tv_auth_name);
         res = "authName = " + accessMethod();
         tvName.setText(res);
+
+        //通过jni调用java静态方法 并返回结果
+        TextView staticMethodShow = findViewById(R.id.tv_static_method_show);
+        res = "accessStaticMethod(100) = " + accessStaticMethod(100);
+        staticMethodShow.setText(res);
     }
 
     private void config() {
