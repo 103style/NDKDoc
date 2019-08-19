@@ -61,6 +61,23 @@ public class MainActivity extends AppCompatActivity {
         TextView show = findViewById(R.id.tv_show);
         show.setText(helloNDK());
 
+        testJniAccess();
+
+        testJniArray();
+
+    }
+
+    /**
+     * jni数组操作
+     */
+    private void testJniArray() {
+        new JniArrayOperation().test();
+    }
+
+    /**
+     * jni访问java的变量和方法
+     */
+    private void testJniAccess() {
         TextView accessFiledShow = findViewById(R.id.tv_access_filed_show);
         String res = "before: " + showText;
         //通过ndk 修改成员变量
@@ -89,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
         TextView staticConstShow = findViewById(R.id.tv_const_show);
         res = accessConstructor().toString();
         staticConstShow.setText(res);
-
     }
 
     private void config() {
