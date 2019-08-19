@@ -16,17 +16,39 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("hello-ndk");
     }
 
+    public String showText = "Hello World";
+
     public native String helloNDK();
+
+    public native void accessField();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        config();
 
+
+        //调用jni获取返回值
         TextView show = findViewById(R.id.tv_show);
         show.setText(helloNDK());
+
+
+
+        TextView accessFiledShow = findViewById(R.id.tv_access_filed_show);
+        String res = "before: " + showText;
+        //通过ndk 修改非静态属性属性
+        accessField();
+        res += ", after:" + showText;
+        accessFiledShow.setText(res);
+
+
+    }
+
+    private void config() {
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
