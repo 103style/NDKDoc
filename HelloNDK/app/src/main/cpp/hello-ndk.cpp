@@ -33,7 +33,7 @@ Java_com_example_myapplication_MainActivity_accessStaticField(JNIEnv *env, jobje
     //获取静态变量id
     jfieldID staticFid = env->GetStaticFieldID(oClass, "staticString", "Ljava/lang/String;");
 
-    //设置静态属性值
+    //设置静态变量
     jstring after = env->NewStringUTF("static field update in jni");
     env->SetStaticObjectField(oClass, staticFid, after);
 }
