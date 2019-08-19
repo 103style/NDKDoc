@@ -17,10 +17,25 @@ JNIEXPORT void JNICALL
 Java_com_example_myapplication_MainActivity_accessField(JNIEnv *env, jobject instance) {
     //获取类
     jclass jcla = env->GetObjectClass(instance);
-    //获取类的属性id
-    jfieldID jfID = env->GetFieldID(jcla, "showText", "Ljava/lang/String;");
+    //获取类的属性showText的id
+    jfieldID jfId = env->GetFieldID(jcla, "showText", "Ljava/lang/String;");
 
     jstring after = env->NewStringUTF("Hello NDK");
     //修改属性id对应的值
-    env->SetObjectField(instance, jfID, after);
+    env->SetObjectField(instance, jfId, after);
 }
+
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_example_myapplication_MainActivity_accessStaticField(JNIEnv *env, jobject instance) {
+    //获取类
+    jclass oClass = env->GetObjectClass(instance);
+    //获取静态属性id
+    jfieldID staticFid = env->GetStaticFieldID(oClass, "staticString", "Ljava/lang/String;");
+
+    //设置静态属性值
+    jstring after = env->NewStringUTF("static field update in jni");
+    env->SetStaticObjectField(oClass, staticFid, after);
+}
+

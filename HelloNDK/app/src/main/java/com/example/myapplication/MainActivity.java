@@ -12,15 +12,19 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static String staticString = "static string";
+
     static {
         System.loadLibrary("hello-ndk");
     }
 
-    public String showText = "Hello World";
+    private String showText = "Hello World";
 
     public native String helloNDK();
 
     public native void accessField();
+
+    public native void accessStaticField();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         show.setText(helloNDK());
 
 
-
         TextView accessFiledShow = findViewById(R.id.tv_access_filed_show);
         String res = "before: " + showText;
         //通过ndk 修改非静态属性属性
@@ -43,10 +46,15 @@ public class MainActivity extends AppCompatActivity {
         accessFiledShow.setText(res);
 
 
+        TextView accessStaticFiledShow = findViewById(R.id.tv_static_access_filed_show);
+        res = "before: " + staticString;
+        //通过ndk 修改非静态属性属性
+        accessStaticField();
+        res += ", after:" + staticString;
+        accessStaticFiledShow.setText(res);
     }
 
     private void config() {
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
