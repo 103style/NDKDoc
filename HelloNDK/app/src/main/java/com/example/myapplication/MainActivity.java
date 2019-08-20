@@ -1,8 +1,12 @@
 package com.example.myapplication;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -10,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Date;
 import java.util.Random;
@@ -65,6 +70,27 @@ public class MainActivity extends AppCompatActivity {
 
         testJniArray();
 
+        findViewById(R.id.tv_encryptor).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testEncryptor();
+            }
+        });
+    }
+
+    /**
+     * 测试jni文件加解密
+     */
+    private void testEncryptor() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0x1024);
+                return;
+            }
+        }
+        String encryptPath = new Encryptor().test();
+        Toast.makeText(this, "加密文件地址：" + encryptPath, Toast.LENGTH_SHORT).show();
     }
 
     /**

@@ -59,4 +59,14 @@
         android:padding="8dp" />
 
 
+    <Button
+        android:id="@+id/tv_encryptor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:text="Encryptor"
+        android:textAllCaps="false" />
+
+
 </LinearLayout>

@@ -77,3 +77,4 @@ Java_com_example_myapplication_MainActivity_accessConstructor(JNIEnv *env, jobje
     jobject jTestClass = env->NewObject(jCla, methodID);
     return jTestClass;
 }
+
