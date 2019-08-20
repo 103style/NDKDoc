@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,11 +10,16 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_array_test"
         style="@style/Jni_Click_Button"
-        android:text="Jni Array Test" />
+        android:text="@string/jni_array_test" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_encryptor_test"
         style="@style/Jni_Click_Button"
-        android:text="Jni File Encryptor Test" />
+        android:text="@string/jni_file_encryptor_test" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_file_operation_test"
+        style="@style/Jni_Click_Button"
+        android:text="@string/jni_file_operation_test" />
 
 </LinearLayout>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NDKDemo</string>
+
+    <string name="jni_array_test">Jni Array Test</string>
+    <string name="jni_file_encryptor_test">Jni File Encryptor Test</string>
+    <string name="jni_file_operation_test">Jni File Operation Test</string>
 </resources>

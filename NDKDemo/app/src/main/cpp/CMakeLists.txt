@@ -1,17 +1,17 @@
 cmake_minimum_required(VERSION 3.4.1)
 
-add_library(array_operation
+add_library(
+        file_operation
         SHARED
-        array_operation.cpp)
+        file_operation.cpp)
 
 add_library(encryptor
         SHARED
         encryptor.cpp)
 
-add_library(
-        file_operation
+add_library(array_operation
         SHARED
-        file_operation.cpp)
+        array_operation.cpp)
 
 find_library(
         log-lib

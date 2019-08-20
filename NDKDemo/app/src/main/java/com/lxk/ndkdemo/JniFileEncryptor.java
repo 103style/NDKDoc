@@ -18,8 +18,6 @@ public class JniFileEncryptor {
         System.loadLibrary("encryptor");
     }
 
-    private final String BASE_URL = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator;
-
     /**
      * 加密
      *
@@ -57,12 +55,12 @@ public class JniFileEncryptor {
      * 加密
      */
     public String encryption(String fileName) {
-        String normalPath = BASE_URL + fileName;
+        String normalPath = Config.getBaseUrl() + fileName;
         File file = new File(normalPath);
         if (!file.exists()) {
             createFile(normalPath);
         }
-        String encryptPath = BASE_URL + "encryption_" + fileName;
+        String encryptPath = Config.getBaseUrl() + "encryption_" + fileName;
         JniFileEncryptor.encryption(normalPath, encryptPath);
         Log.d(TAG, "加密完成了...");
         return encryptPath;
