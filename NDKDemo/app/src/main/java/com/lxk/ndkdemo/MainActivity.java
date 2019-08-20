@@ -11,36 +11,25 @@ import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        config(R.id.bt_array_test, new Runnable() {
-            @Override
-            public void run() {
-                testJniArray();
-            }
-        });
-
-        config(R.id.bt_encryptor_test, new Runnable() {
-            @Override
-            public void run() {
-                testEncryptor();
-            }
-        });
+        findViewById(R.id.bt_array_test).setOnClickListener(this);
+        findViewById(R.id.bt_encryptor_test).setOnClickListener(this);
     }
 
-    private void config(@IdRes int id, final Runnable runnable) {
-        findViewById(id).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                runnable.run();
-            }
-        });
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        if (id == R.id.bt_array_test) {
+            testJniArray();
+        } else if (id == R.id.bt_encryptor_test) {
+            testEncryptor();
+        }
     }
 
     /**
@@ -64,4 +53,5 @@ public class MainActivity extends AppCompatActivity {
     private void testJniArray() {
         new JniArrayOperation().test();
     }
+
 }
