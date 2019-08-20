@@ -1,6 +1,5 @@
 package com.lxk.ndkdemo;
 
-import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
@@ -60,7 +59,7 @@ public class JniFileEncryptor {
         if (!file.exists()) {
             createFile(normalPath);
         }
-        String encryptPath = Config.getBaseUrl() + "encryption_" + fileName;
+        String encryptPath = Config.getBaseUrl() + fileName + "_encryption";
         JniFileEncryptor.encryption(normalPath, encryptPath);
         Log.d(TAG, "加密完成了...");
         return encryptPath;
@@ -74,7 +73,7 @@ public class JniFileEncryptor {
             Log.d(TAG, "解密文件不存在");
             return;
         }
-        String decryptPath = encryptPath.replace("encryption_", "decryption_");
+        String decryptPath = encryptPath.replace("encryption", "decryption");
         JniFileEncryptor.decryption(encryptPath, decryptPath);
         Log.d(TAG, "解密完成了...");
     }
