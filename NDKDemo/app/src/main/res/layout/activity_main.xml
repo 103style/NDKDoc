@@ -22,4 +22,9 @@
         style="@style/Jni_Click_Button"
         android:text="@string/jni_file_operation_test" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_list_dir_all_file"
+        style="@style/Jni_Click_Button"
+        android:text="@string/list_dir_all_file" />
+
 </LinearLayout>

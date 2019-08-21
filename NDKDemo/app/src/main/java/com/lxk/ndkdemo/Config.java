@@ -12,7 +12,7 @@ import java.io.File;
  */
 public class Config {
 
-    public static final String BASE_URL = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator;
+    public static final String BASE_URL = Environment.getExternalStorageDirectory().getAbsolutePath();
 
     private static String DIR_NAME = "NDKDemo";
 
@@ -25,7 +25,7 @@ public class Config {
         if (!TextUtils.isEmpty(DIR_PATH)) {
             return DIR_PATH;
         }
-        File file = new File(BASE_URL + DIR_NAME);
+        File file = new File(BASE_URL + File.separator + DIR_NAME);
         if (!file.exists()) {
             file.mkdir();
         }

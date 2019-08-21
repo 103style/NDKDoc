@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bt_array_test).setOnClickListener(this);
         findViewById(R.id.bt_encryptor_test).setOnClickListener(this);
         findViewById(R.id.bt_file_operation_test).setOnClickListener(this);
+        findViewById(R.id.bt_list_dir_all_file).setOnClickListener(this);
     }
 
     @Override
@@ -31,9 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             testEncryptor();
         } else if (id == R.id.bt_file_operation_test) {
             testFileOperation();
+        } else if (id == R.id.bt_list_dir_all_file) {
+            testListDirAllFiles();
         }
     }
-
 
     /**
      * jni数组操作
@@ -73,5 +75,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * 测试jni文件夹遍历
+     */
+    private void testListDirAllFiles() {
+        if (hasFilePermission()) {
+            new JniListDirAllFiles().test();
+            Toast.makeText(this, "任务完成，检查看日志输出", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }
