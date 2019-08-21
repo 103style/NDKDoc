@@ -10,7 +10,6 @@
 
 const int PATH_MAX_LENGTH = 256;
 
-using namespace std;
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lxk_ndkdemo_JniListDirAllFiles_listDirAllFile(JNIEnv *env, jobject instance,

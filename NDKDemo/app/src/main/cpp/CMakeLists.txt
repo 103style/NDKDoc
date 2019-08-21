@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 add_library(
+        bitmap
+        SHARED
+        bitmap.cpp)
+
+add_library(
         list_dir_all_file
         SHARED
         list_dir_all_file.cpp)
@@ -39,4 +44,9 @@ target_link_libraries(
 
 target_link_libraries(
         list_dir_all_file
+        ${log-lib})
+
+target_link_libraries(
+        bitmap
+        jnigraphics
         ${log-lib})

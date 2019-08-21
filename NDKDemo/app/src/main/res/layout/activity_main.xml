@@ -27,4 +27,9 @@
         style="@style/Jni_Click_Button"
         android:text="@string/list_dir_all_file" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_bitmap"
+        style="@style/Jni_Click_Button"
+        android:text="@string/bitmap_test" />
+
 </LinearLayout>

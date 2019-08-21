@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bt_encryptor_test).setOnClickListener(this);
         findViewById(R.id.bt_file_operation_test).setOnClickListener(this);
         findViewById(R.id.bt_list_dir_all_file).setOnClickListener(this);
+        findViewById(R.id.bt_bitmap).setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             testFileOperation();
         } else if (id == R.id.bt_list_dir_all_file) {
             testListDirAllFiles();
+        } else if (id == R.id.bt_bitmap) {
+            new JniBitmapDemo().test();
         }
     }
 
