@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * jni回调用java计时的实例
      */
     private JniCallbackDemo jniCallbackDemo;
+    /**
+     * 计时是否已经运行
+     */
+    private boolean running;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,10 +111,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 测试jni调用java
      */
     private void jniCallbackRun(boolean run) {
+        if (running) {
+            return;
+        }
         if (jniCallbackDemo == null) {
             jniCallbackDemo = new JniCallbackDemo();
         }
         if (run) {
+            running = true;
             Toast.makeText(this, "开始计时，请查看控制台日志输出", Toast.LENGTH_SHORT).show();
             jniCallbackDemo.startTiming();
         } else {
