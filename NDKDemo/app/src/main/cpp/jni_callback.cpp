@@ -5,11 +5,10 @@
 #include <jni.h>
 #include <android/log.h>
 #include <cstring>
-#include <inttypes.h>
 #include <pthread.h>
-#include <assert.h>
+#include <cassert>
+#include <cinttypes>
 #include "LogUtils.h"
-
 
 typedef struct jni_callback {
     JavaVM *javaVM;
@@ -98,21 +97,6 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
     return JNI_VERSION_1_6;
 }
 
-
-JNIEXPORT void JNI_OnUnload(JavaVM *vm, void *reserved) {
-    LOGD("JNI_OnUnload");
-    JNIEnv *env;
-    if (vm->GetEnv(reinterpret_cast<void **>(&env), JNI_VERSION_1_6) != JNI_OK) {
-        return;
-    }
-    //删除引用
-    env->DeleteGlobalRef(jniCallback.jniHandlerClz);
-    env->DeleteGlobalRef(jniCallback.jniHandlerObj);
-    jniCallback.jniHandlerObj = nullptr;
-    jniCallback.jniHandlerClz = nullptr;
-}
-
-
 /**
  * 调用 类 instance 的 void方法 methodId
  */
@@ -125,7 +109,6 @@ void sendJavaMsg(JNIEnv *env, jobject instance, jmethodID methodId, const char *
     //删除本地引用
     env->DeleteLocalRef(javaMsg);
 }
-
 
 void *StartTiming(void *context) {
     //获取参数
@@ -217,7 +200,6 @@ void *StartTiming(void *context) {
     return context;
 }
 
-
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lxk_ndkdemo_JniCallbackDemo_startTiming(JNIEnv *env, jobject instance) {
@@ -250,7 +232,6 @@ Java_com_lxk_ndkdemo_JniCallbackDemo_startTiming(JNIEnv *env, jobject instance) 
     //删除线程属性
     pthread_attr_destroy(&threadAttr);
 }
-
 
 extern "C"
 JNIEXPORT void JNICALL

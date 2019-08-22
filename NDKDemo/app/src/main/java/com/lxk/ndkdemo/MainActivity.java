@@ -20,10 +20,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * jni回调用java计时的实例
      */
     private JniCallbackDemo jniCallbackDemo;
-    /**
-     * jni回调用java计时的开关
-     */
-    private boolean runJNiCallback = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,37 +32,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bt_list_dir_all_file).setOnClickListener(this);
         findViewById(R.id.bt_bitmap).setOnClickListener(this);
         findViewById(R.id.bt_jni_callback).setOnClickListener(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        jniCallbackRun(true);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        jniCallbackRun(false);
-
-    }
-
-    /**
-     * 测试jni调用java
-     */
-    private void jniCallbackRun(boolean run) {
-        if (!runJNiCallback) {
-            return;
-        }
-        if (jniCallbackDemo == null) {
-            jniCallbackDemo = new JniCallbackDemo();
-        }
-        if (run) {
-            jniCallbackDemo.stopTiming();
-        } else {
-            jniCallbackDemo.startTiming();
-            jniCallbackDemo.stopTiming();
-        }
     }
 
     @Override
@@ -135,8 +100,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 测试jni开线程调用java
      */
     private void testJniCallback() {
-        runJNiCallback = true;
         jniCallbackRun(true);
+    }
+
+    /**
+     * 测试jni调用java
+     */
+    private void jniCallbackRun(boolean run) {
+        if (jniCallbackDemo == null) {
+            jniCallbackDemo = new JniCallbackDemo();
+        }
+        if (run) {
+            jniCallbackDemo.startTiming();
+        } else {
+            jniCallbackDemo.stopTiming();
+        }
     }
 
     /**
@@ -151,5 +129,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         return true;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        jniCallbackRun(false);
     }
 }
