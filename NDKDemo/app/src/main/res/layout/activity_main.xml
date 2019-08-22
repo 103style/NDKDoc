@@ -32,4 +32,9 @@
         style="@style/Jni_Click_Button"
         android:text="@string/bitmap_test" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_jni_callback"
+        style="@style/Jni_Click_Button"
+        android:text="JNI callback test" />
+
 </LinearLayout>

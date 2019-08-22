@@ -10,7 +10,20 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+/**
+ * @author https://github.com/103style
+ * @date 2019/8/22 15:50
+ * ndk demo
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    /**
+     * jni回调用java计时的实例
+     */
+    private JniCallbackDemo jniCallbackDemo;
+    /**
+     * jni回调用java计时的开关
+     */
+    private boolean runJNiCallback = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +35,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bt_file_operation_test).setOnClickListener(this);
         findViewById(R.id.bt_list_dir_all_file).setOnClickListener(this);
         findViewById(R.id.bt_bitmap).setOnClickListener(this);
+        findViewById(R.id.bt_jni_callback).setOnClickListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        jniCallbackRun(true);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        jniCallbackRun(false);
+
+    }
+
+    /**
+     * 测试jni调用java
+     */
+    private void jniCallbackRun(boolean run) {
+        if (!runJNiCallback) {
+            return;
+        }
+        if (jniCallbackDemo == null) {
+            jniCallbackDemo = new JniCallbackDemo();
+        }
+        if (run) {
+            jniCallbackDemo.stopTiming();
+        } else {
+            jniCallbackDemo.startTiming();
+            jniCallbackDemo.stopTiming();
+        }
     }
 
     @Override
@@ -36,7 +81,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (id == R.id.bt_list_dir_all_file) {
             testListDirAllFiles();
         } else if (id == R.id.bt_bitmap) {
-            new JniBitmapDemo().test();
+            testJniBitmap();
+        } else if (id == R.id.bt_jni_callback) {
+            testJniCallback();
         }
     }
 
@@ -45,17 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void testJniArray() {
         new JniArrayOperation().test();
-    }
-
-    private boolean hasFilePermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0x1024);
-                return false;
-            }
-        }
-        return true;
     }
 
     /**
@@ -88,4 +124,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * 测试jni使用bitmap
+     */
+    private void testJniBitmap() {
+        new JniBitmapDemo().test();
+    }
+
+    /**
+     * 测试jni开线程调用java
+     */
+    private void testJniCallback() {
+        runJNiCallback = true;
+        jniCallbackRun(true);
+    }
+
+    /**
+     * 申请权限
+     */
+    private boolean hasFilePermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0x1024);
+                return false;
+            }
+        }
+        return true;
+    }
 }

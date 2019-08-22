@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 add_library(
+        jni_callback
+        SHARED
+        jni_callback.cpp)
+
+add_library(
         bitmap
         SHARED
         bitmap.cpp)
@@ -49,4 +54,8 @@ target_link_libraries(
 target_link_libraries(
         bitmap
         jnigraphics
+        ${log-lib})
+
+target_link_libraries(
+        jni_callback
         ${log-lib})
