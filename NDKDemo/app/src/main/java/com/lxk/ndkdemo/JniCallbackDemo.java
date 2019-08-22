@@ -28,8 +28,14 @@ public class JniCallbackDemo {
      */
     public native void startTiming();
 
+    /**
+     * 停止计时
+     */
     public native void stopTiming();
 
+    /**
+     * 输出开始计时后的每一秒
+     */
     @Keep
     private void printTime() {
         Log.e(TAG, "timeCount = " + timeCount);

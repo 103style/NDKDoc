@@ -35,6 +35,6 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_jni_callback"
         style="@style/Jni_Click_Button"
-        android:text="JNI callback test" />
+        android:text="@string/jni_callback_test" />
 
 </LinearLayout>

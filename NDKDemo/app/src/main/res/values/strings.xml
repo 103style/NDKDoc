@@ -6,4 +6,5 @@
     <string name="jni_file_operation_test">Jni File Operation Test</string>
     <string name="list_dir_all_file">List dir all file</string>
     <string name="bitmap_test">Bitmap test</string>
+    <string name="jni_callback_test">JNI callback test</string>
 </resources>

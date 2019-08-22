@@ -138,7 +138,7 @@ void *StartTiming(void *context) {
     //获取 JniCallbackDemo 的 printTime 函数
     jmethodID timerId = env->GetMethodID(JniCallback->jniCallbackDemoClz, "printTime", "()V");
 
-    //生命时间变量
+    //声明时间变量
     struct timeval beginTime, curTime, usedTime, leftTime;
     const struct timeval kOneSecond = {
             (__kernel_time_t) 1,

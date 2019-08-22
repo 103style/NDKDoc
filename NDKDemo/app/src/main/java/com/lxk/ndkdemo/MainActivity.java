@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             jniCallbackDemo = new JniCallbackDemo();
         }
         if (run) {
+            Toast.makeText(this, "开始计时，请查看控制台日志输出", Toast.LENGTH_SHORT).show();
             jniCallbackDemo.startTiming();
         } else {
             jniCallbackDemo.stopTiming();
