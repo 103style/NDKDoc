@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3",
+      "sdkFolder": "D:\\Android\\sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\build\\intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app",
+      "makeFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\src\\main\\cpp\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\.cxx",
+      "cxxFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx",
+      "ndkFolder": "D:\\Android\\sdk\\ndk-bundle",
+      "ndkVersion": "20.0.5594570",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "debug",
+    "soFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\build\\intermediates\\cmake\\debug\\lib",
+    "objFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\build\\intermediates\\cmake\\debug\\obj",
+    "jsonFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug",
+    "gradleBuildOutputFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86",
+  "jsonFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug\\x86",
+  "objFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\build\\intermediates\\cmake\\debug\\obj\\x86",
+  "buildCommandFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\\build_command.txt",
+  "buildOutputFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\\build_output.txt",
+  "modelOutputFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug\\x86\\CMakeLists.txt",
+    "toolchainWrapperFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug\\x86\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug\\x86\\build_generation_state.json",
+    "cacheKeyFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug\\x86\\compiler_cache_key.json",
+    "compilerCacheUseFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug\\x86\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug\\x86\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug\\x86\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\\json_generation_record.json",
+  "compileCommandsJsonFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\\compile_commands.json"
+}

@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "D:\\Android\\sdk\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+    "D:\\Android\\sdk\\ndk-bundle\\build\\cmake\\platforms.cmake",
+    "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "D:\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\" clean"
+  ],
+  "buildTargetsCommand": "D:\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-gles3-Debug-x86": {
+      "artifactName": "native-gles3",
+      "buildCommand": "D:\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\" native-gles3",
+      "abi": "x86",
+      "output": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\build\\intermediates\\cmake\\debug\\obj\\x86\\libnative-gles3.so"
+    }
+  }
+}
