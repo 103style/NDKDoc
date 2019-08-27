@@ -16,5 +16,6 @@ arguments :
 -DCMAKE_TOOLCHAIN_FILE=D:\Android\sdk\ndk-bundle\build\cmake\android.toolchain.cmake
 -G Ninja
 -DCMAKE_MAKE_PROGRAM=D:\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DANDROID_STL=c++_static
 jvmArgs : 
 

@@ -38,9 +38,9 @@ include rules.ninja
 
 build cmake_object_order_depends_target_native-gles3: phony
 build CMakeFiles/native-gles3.dir/native-gles3.cpp.o: CXX_COMPILER__native-gles3 E$:/AndroidProject/NDKDoc/HelloGLES3/app/src/main/cpp/native-gles3.cpp || cmake_object_order_depends_target_native-gles3
-  DEFINES = -Dnative_gles3_EXPORTS
+  DEFINES = -DDYNAMIC_ES3 -Dnative_gles3_EXPORTS
   DEP_FILE = CMakeFiles\native-gles3.dir\native-gles3.cpp.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11 -fno-rtti -fno-exceptions -Wall -std=c++11 -fno-rtti -fno-exceptions -Wall -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -IE:/AndroidProject/NDKDoc/HelloGLES3/app/src/main/cpp/src/main/cpp
   OBJECT_DIR = CMakeFiles\native-gles3.dir
   OBJECT_FILE_DIR = CMakeFiles\native-gles3.dir
@@ -53,7 +53,7 @@ build CMakeFiles/native-gles3.dir/native-gles3.cpp.o: CXX_COMPILER__native-gles3
 # Link the shared library E:\AndroidProject\NDKDoc\HelloGLES3\app\build\intermediates\cmake\debug\obj\x86\libnative-gles3.so
 
 build E$:/AndroidProject/NDKDoc/HelloGLES3/app/build/intermediates/cmake/debug/obj/x86/libnative-gles3.so: CXX_SHARED_LIBRARY_LINKER__native-gles3 CMakeFiles/native-gles3.dir/native-gles3.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info
+  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11 -fno-rtti -fno-exceptions -Wall -std=c++11 -fno-rtti -fno-exceptions -Wall -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack
   LINK_LIBRARIES = -landroid -lEGL -lGLESv3 -llog -latomic -lm
   OBJECT_DIR = CMakeFiles\native-gles3.dir

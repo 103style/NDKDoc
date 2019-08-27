@@ -50,7 +50,8 @@ CMAKE SERVER: {
     "-DCMAKE_ANDROID_NDK\u003dD:\\Android\\sdk\\ndk-bundle",
     "-DCMAKE_TOOLCHAIN_FILE\u003dD:\\Android\\sdk\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
     "-G Ninja",
-    "-DCMAKE_MAKE_PROGRAM\u003dD:\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+    "-DCMAKE_MAKE_PROGRAM\u003dD:\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "-DANDROID_STL\u003dc++_static"
   ]
 }
 
@@ -345,7 +346,7 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"configurations":[{"name":"Debug","projects":[{"buildDirectory":"E:/AndroidProject/NDKDoc/HelloGLES3/app/.cxx/cmake/debug/x86","name":"Project","sourceDirectory":"E:/AndroidProject/NDKDoc/HelloGLES3/app/src/main/cpp","targets":[{"artifacts":["E:/AndroidProject/NDKDoc/HelloGLES3/app/build/intermediates/cmake/debug/obj/x86/libnative-gles3.so"],"buildDirectory":"E:/AndroidProject/NDKDoc/HelloGLES3/app/.cxx/cmake/debug/x86","fileGroups":[{"compileFlags":"-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC  ","defines":["native_gles3_EXPORTS"],"includePath":[{"path":"E:/AndroidProject/NDKDoc/HelloGLES3/app/src/main/cpp/src/main/cpp"}],"isGenerated":false,"language":"CXX","sources":["native-gles3.cpp"]}],"fullName":"libnative-gles3.so","linkFlags":"-Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack","linkLibraries":"-landroid -lEGL -lGLESv3 -llog -latomic -lm","linkerLanguage":"CXX","name":"native-gles3","sourceDirectory":"E:/AndroidProject/NDKDoc/HelloGLES3/app/src/main/cpp","sysroot":"D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot","type":"SHARED_LIBRARY"}]}]}],"cookie":"","inReplyTo":"codemodel","type":"reply"}
+CMAKE SERVER: {"configurations":[{"name":"Debug","projects":[{"buildDirectory":"E:/AndroidProject/NDKDoc/HelloGLES3/app/.cxx/cmake/debug/x86","name":"Project","sourceDirectory":"E:/AndroidProject/NDKDoc/HelloGLES3/app/src/main/cpp","targets":[{"artifacts":["E:/AndroidProject/NDKDoc/HelloGLES3/app/build/intermediates/cmake/debug/obj/x86/libnative-gles3.so"],"buildDirectory":"E:/AndroidProject/NDKDoc/HelloGLES3/app/.cxx/cmake/debug/x86","fileGroups":[{"compileFlags":"-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11 -fno-rtti -fno-exceptions -Wall -std=c++11 -fno-rtti -fno-exceptions -Wall -O0 -fno-limit-debug-info  -fPIC  ","defines":["DYNAMIC_ES3","native_gles3_EXPORTS"],"includePath":[{"path":"E:/AndroidProject/NDKDoc/HelloGLES3/app/src/main/cpp/src/main/cpp"}],"isGenerated":false,"language":"CXX","sources":["native-gles3.cpp"]}],"fullName":"libnative-gles3.so","linkFlags":"-Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack","linkLibraries":"-landroid -lEGL -lGLESv3 -llog -latomic -lm","linkerLanguage":"CXX","name":"native-gles3","sourceDirectory":"E:/AndroidProject/NDKDoc/HelloGLES3/app/src/main/cpp","sysroot":"D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot","type":"SHARED_LIBRARY"}]}]}],"cookie":"","inReplyTo":"codemodel","type":"reply"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
 

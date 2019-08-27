@@ -29,7 +29,9 @@
       ],
       "cmakeToolchainFile": "."
     },
-    "buildSystemArgumentList": [],
+    "buildSystemArgumentList": [
+      "-DANDROID_STL\u003dc++_static"
+    ],
     "cFlagList": [],
     "cppFlagsList": [
       ""
