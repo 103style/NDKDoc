@@ -25,14 +25,6 @@
   },
   {
     "level": "INFO",
-    "message": "- a dependent build file changed"
-  },
-  {
-    "level": "INFO",
-    "message": "  - E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\src\\main\\cpp\\CMakeLists.txt"
-  },
-  {
-    "level": "INFO",
     "message": "removing stale contents from \u0027E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\u0027"
   },
   {

@@ -1,21 +1,34 @@
 package com.lxk.hellogles3;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.widget.TextView;
-
+/**
+ * @author https://github.com/103style
+ * @date 2019/8/26 11:11
+ */
 public class MainActivity extends AppCompatActivity {
 
-    // Used to load the 'native-lib' library on application startup.
-    static {
-        System.loadLibrary("native-gles3");
-    }
+    private GLES3JNIView view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView();
+        view = new GLES3JNIView(getApplication());
+        setContentView(view);
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        view.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        view.onPause();
+    }
 }

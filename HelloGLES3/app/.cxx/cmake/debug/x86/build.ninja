@@ -41,6 +41,7 @@ build CMakeFiles/native-gles3.dir/native-gles3.cpp.o: CXX_COMPILER__native-gles3
   DEFINES = -Dnative_gles3_EXPORTS
   DEP_FILE = CMakeFiles\native-gles3.dir\native-gles3.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
+  INCLUDES = -IE:/AndroidProject/NDKDoc/HelloGLES3/app/src/main/cpp/src/main/cpp
   OBJECT_DIR = CMakeFiles\native-gles3.dir
   OBJECT_FILE_DIR = CMakeFiles\native-gles3.dir
 

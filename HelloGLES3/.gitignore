@@ -27,6 +27,7 @@ local.properties
 out/
 outputs/
 build/
+app/.cxx/
 .gradle/
 
 # IDEA
