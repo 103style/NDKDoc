@@ -51,7 +51,7 @@
     "buildTargetSet": []
   },
   "abi": "X86",
-  "abiPlatformVersion": 16,
+  "abiPlatformVersion": 18,
   "cxxBuildFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86",
   "jsonFile": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cmake\\debug\\x86\\android_gradle_build.json",
   "gradleBuildOutputFolder": "E:\\AndroidProject\\NDKDoc\\HelloGLES3\\app\\.cxx\\cxx\\debug\\x86",

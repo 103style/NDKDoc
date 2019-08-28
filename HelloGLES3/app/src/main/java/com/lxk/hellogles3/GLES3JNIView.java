@@ -20,6 +20,7 @@ public class GLES3JNIView extends GLSurfaceView {
     }
 
     private void init() {
+        setEGLContextClientVersion(3);
         setRenderer(new GLES3Render());
     }
 }

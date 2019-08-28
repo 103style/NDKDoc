@@ -7,6 +7,9 @@
 #include <android/log.h>
 #include "LogUtils.h"
 
+/**
+ * 顶点着色器源码
+ */
 auto gl_vertexShader_source =
         "#version 300 es\n"
         "layout(location = 0) in vec4 vPosition;\n"
@@ -14,6 +17,9 @@ auto gl_vertexShader_source =
         "   gl_Position = vPosition;\n"
         "}\n";
 
+/**
+ * 片段着色器源码
+ */
 auto gl_fragmentShader_source =
         "#version 300 es\n"
         "precision mediump float;\n"
@@ -22,7 +28,9 @@ auto gl_fragmentShader_source =
         "   fragColor = vec4(1.0,1.0,0.0,1.0);\n"
         "}\n";
 
-
+/**
+ * 输出GL的属性值
+ */
 static void printGLString(const char *name, GLenum s) {
     const char *glName = reinterpret_cast<const char *>(glGetString(s));
     LOGE("GL %s = %s", name, glName);
@@ -117,6 +125,9 @@ GLuint linkProgram(GLuint vertexShader, GLuint fragmentShader) {
 }
 
 
+/**
+ * 着色器程序
+ */
 GLuint program;
 
 extern "C"
@@ -129,6 +140,7 @@ Java_com_lxk_hellogles3_GLES3Render_surfaceChanged(JNIEnv *env, jobject thiz, ji
 
     LOGD("surfaceChange(%d,%d)", w, h);
 
+    //编译着色器源码
     GLuint vertexShader = compileShader(GL_VERTEX_SHADER, gl_vertexShader_source);
     GLuint fragmentShader = compileShader(GL_FRAGMENT_SHADER, gl_fragmentShader_source);
     program = linkProgram(vertexShader, fragmentShader);
@@ -140,7 +152,6 @@ Java_com_lxk_hellogles3_GLES3Render_surfaceChanged(JNIEnv *env, jobject thiz, ji
 
     //设置程序窗口
     glViewport(0, 0, w, h);
-
     checkGlError("glViewport");
 }
 
@@ -155,10 +166,10 @@ static float r;
 static float g;
 static float b;
 
-extern "C"
-JNIEXPORT void JNICALL
-Java_com_lxk_hellogles3_GLES3Render_drawFrame(JNIEnv *env, jobject thiz) {
-
+/**
+ * 修改背景颜色
+ */
+void changeBg() {
     r += 0.01f;
     if (r > 1.0f) {
         g += 0.01f;
@@ -171,30 +182,44 @@ Java_com_lxk_hellogles3_GLES3Render_drawFrame(JNIEnv *env, jobject thiz) {
             }
         }
     }
+}
+
+/**
+ * 顶点属性索引
+ */
+GLuint vertexIndex = 0;
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_lxk_hellogles3_GLES3Render_drawFrame(JNIEnv *env, jobject thiz) {
+
+    //改变颜色值
+    changeBg();
 
     glClearColor(r, g, b, 1.0f);
     checkGlError("glClearColor");
     //清空颜色缓冲区
-    glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
     checkGlError("glClear");
 
     //设置为活动程序
     glUseProgram(program);
     checkGlError("glUseProgram");
 
-    //顶点属性索引
-    GLuint vertexIndex = 0;
 
     //加载顶点坐标
-    glEnableVertexAttribArray(vertexIndex);
-    checkGlError("glEnableVertexAttribArray");
-
     glVertexAttribPointer(vertexIndex, 3, GL_FLOAT, GL_FALSE, 0, vVertex);
     checkGlError("glVertexAttribPointer");
+
+    //启用通用顶点属性数组
+    glEnableVertexAttribArray(vertexIndex);
+    checkGlError("glEnableVertexAttribArray");
 
     //绘制三角形
     glDrawArrays(GL_TRIANGLES, 0, 3);
     checkGlError("glDrawArrays");
 
+    //禁用通用顶点属性数组
     glDisableVertexAttribArray(vertexIndex);
+    checkGlError("glDisableVertexAttribArray");
 }
