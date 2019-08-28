@@ -20,6 +20,7 @@ public class GLES3JNIView extends GLSurfaceView {
     }
 
     private void init() {
+        //设置 OpenGL ES 的版本
         setEGLContextClientVersion(3);
         setRenderer(new GLES3Render());
     }

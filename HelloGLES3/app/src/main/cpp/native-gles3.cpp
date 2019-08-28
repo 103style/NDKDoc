@@ -143,6 +143,7 @@ Java_com_lxk_hellogles3_GLES3Render_surfaceChanged(JNIEnv *env, jobject thiz, ji
     //编译着色器源码
     GLuint vertexShader = compileShader(GL_VERTEX_SHADER, gl_vertexShader_source);
     GLuint fragmentShader = compileShader(GL_FRAGMENT_SHADER, gl_fragmentShader_source);
+    //链接着色器程序
     program = linkProgram(vertexShader, fragmentShader);
 
     if (!program) {
@@ -155,11 +156,13 @@ Java_com_lxk_hellogles3_GLES3Render_surfaceChanged(JNIEnv *env, jobject thiz, ji
     checkGlError("glViewport");
 }
 
-//顶点坐标
+/**
+ * 顶点坐标
+ */
 const GLfloat vVertex[] = {
         0.0f, 0.5f, 0.0f,
         -0.5f, -0.5f, 0.0f,
-        0.5f, 0.5f, 0.0f
+        0.5f, -0.5f, 0.0f
 };
 
 static float r;
