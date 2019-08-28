@@ -11,3 +11,13 @@
 * [NDK开发（八） ：JNI下Bitmap的使用](https://www.jianshu.com/p/bf9bc686be76)
 * [NDK开发（九） ：Hello JniCallback](https://www.jianshu.com/p/15464d9199ba)
 * [NDK开发（十） ：Hello OpenGLES3](https://www.jianshu.com/p/d3691ee13348)
+
+
+### 实例APK下载
+
+[Download](https://github.com/103style/NDKDoc/blob/master/HelloGLES3/APK/app-debug.apk)
+
+
+### 效果图
+
+![效果图](https://github.com/103style/NDKDoc/blob/master/HelloGLES3/ScreenShot/1.gif)
