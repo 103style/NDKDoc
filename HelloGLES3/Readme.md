@@ -1,3 +1,14 @@
+### 示例APK下载
+
+[Download](https://github.com/103style/NDKDoc/blob/master/HelloGLES3/APK/app-debug.apk)
+
+
+### 效果图
+
+![效果图](https://github.com/103style/NDKDoc/blob/master/HelloGLES3/ScreenShot/1.gif)
+
+
+
 ### NDKDoc
 
 
@@ -13,11 +24,3 @@
 * [NDK开发（十） ：Hello OpenGLES3](https://www.jianshu.com/p/d3691ee13348)
 
 
-### 实例APK下载
-
-[Download](https://github.com/103style/NDKDoc/blob/master/HelloGLES3/APK/app-debug.apk)
-
-
-### 效果图
-
-![效果图](https://github.com/103style/NDKDoc/blob/master/HelloGLES3/ScreenShot/1.gif)
