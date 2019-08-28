@@ -1,6 +1,7 @@
 ### 示例APK下载
 
 [Download](https://github.com/103style/NDKDoc/blob/master/HelloGLES3/APK/app-debug.apk)
+[Download](https://raw.githubusercontent.com/103style/NDKDoc/master/HelloGLES3/APK/app-debug.apk)
 
 
 ### 效果图
